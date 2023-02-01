@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import pl.sobolewski.serwis.tools.BCryptComponent;
 import pl.sobolewski.serwis.tools.HashingPassword;
 
 import java.util.List;
@@ -22,9 +21,8 @@ public class UserService {
 
     @Autowired
     ObjectMapper objectMapper;
-
-
-    HashingPassword hashingPassword = new BCryptComponent();
+    @Autowired
+    HashingPassword hashingPassword;
 
     @GetMapping("/users")
     public ResponseEntity getUsers() throws JsonProcessingException {

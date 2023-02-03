@@ -4,7 +4,7 @@ import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Component;
 
 @Component
-public class BCryptComponent implements HashingPassword {
+public class BCryptComponent implements PasswordGenerator {
 
 
     public BCryptComponent() {

@@ -12,6 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 import pl.sobolewski.serwis.tools.PasswordGenerator;
 
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Component
 @ToString
@@ -52,30 +54,38 @@ public class UserService extends RuntimeException {
 
     @Transactional
     public ResponseEntity changePassword(int id, @NotNull User updatedUser) {
-// Jak tutaj sterowac przeplywem jak nie znajdzie?
+// MUSZE NA SPOKOJNIE TE WYJATKI POCZYTAC
 
-        try {
-            userRepository
-                    .findById((long) id)
-                    .ifPresentOrElse(user -> {
-                                //user.setUsername(updatedUser.getUsername());
-                                user.setPassword(passwordGenerator.hash(updatedUser.getPassword()));
+        Optional<User> exist = userRepository.findById((long) id);
+        if (!exist.isEmpty()) {
+            try {
+                userRepository
+                        .findById((long) id)
+                        .ifPresentOrElse(user -> {
+                                    //user.setUsername(updatedUser.getUsername());
+                                    user.setPassword(passwordGenerator.hash(updatedUser.getPassword()));
 
-                                userRepository.save(user);
-                                ResponseEntity status = ResponseEntity.status(HttpStatus.OK).build();
+                                    userRepository.save(user);
 
-                            },
-                            () -> {
-                                ResponseEntity status = ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-                            }
+                                },
+                                () -> {
+                                    try {
+                                        throw new Exception("Item not found!");
+                                    } catch (Exception e) {
+                                        throw new RuntimeException(e);
+                                    }
+                                }
 
-                    );
-        } catch (Exception e) {
-            System.out.println(e);
+                        );
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            return ResponseEntity.status(HttpStatus.OK).build();
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
-// narazie zwraca zawsze ok bo nie wiem ja sterowac
 
-        return ResponseEntity.status(HttpStatus.OK).build();
+
         //
 
 

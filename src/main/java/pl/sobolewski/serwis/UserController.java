@@ -16,7 +16,12 @@ public class UserController extends ResponseEntityExceptionHandler {
 
     @GetMapping("/details/{id}")
     public ResponseEntity getUsername(@PathVariable("id") int id) {
-        return userService.getUsername(id);
+        return userService.getUsernameById(id);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity getUsers(@PathVariable("id") int id) throws JsonProcessingException {
+        return userService.getUserById(id);
     }
 
     @GetMapping("")

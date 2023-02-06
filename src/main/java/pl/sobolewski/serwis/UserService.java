@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.ToString;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -29,7 +28,7 @@ public class UserService extends RuntimeException {
     @Autowired
     ErrorResponse errorResponse;
 
-    public ResponseEntity getUsername(int id) {
+    public ResponseEntity getUsernameById(int id) {
         Optional<User> user = userRepository.findById((long) id);
         if (!user.isEmpty()) {
             String username = user.stream()
@@ -45,6 +44,10 @@ public class UserService extends RuntimeException {
             return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
         }
 
+    }
+    public ResponseEntity getUserById(int id) throws JsonProcessingException{
+        Optional<User> user = userRepository.findById((long) id);
+        return ResponseEntity.ok(objectMapper.writeValueAsString(user));
     }
 
     public ResponseEntity getUsers() throws JsonProcessingException {

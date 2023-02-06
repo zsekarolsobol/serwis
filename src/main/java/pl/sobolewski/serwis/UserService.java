@@ -40,7 +40,7 @@ public class UserService extends RuntimeException {
             return ResponseEntity.ok(username);
         } else {
                 errorResponse.setTimestamp(LocalDateTime.now());
-                errorResponse.setError("Brak user o podanym id");
+                errorResponse.setError("Brak user o podanym id=" +id);
                 errorResponse.setStatus(HttpStatus.NOT_FOUND.value());
             return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
         }

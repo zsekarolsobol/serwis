@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.PathVariable;
 import pl.sobolewski.serwis.tools.ErrorResponse;
 import pl.sobolewski.serwis.tools.PasswordGenerator;
 
@@ -38,16 +39,19 @@ public class UserService extends RuntimeException {
 
             return ResponseEntity.ok(username);
         } else {
-                errorResponse.setTimestamp(LocalDateTime.now());
-                errorResponse.setError("Brak user o podanym id=" +id);
-                errorResponse.setStatus(HttpStatus.NOT_FOUND.value());
-            return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(userNotFoundById(id), HttpStatus.NOT_FOUND);
         }
 
     }
-    public ResponseEntity getUserById(int id) throws JsonProcessingException{
+
+    public ResponseEntity getUserById(int id) throws JsonProcessingException {
         Optional<User> user = userRepository.findById((long) id);
-        return ResponseEntity.ok(objectMapper.writeValueAsString(user));
+        if (!user.isEmpty()) {
+            return ResponseEntity.ok(objectMapper.writeValueAsString(user));
+        } else {
+            return new ResponseEntity<>(userNotFoundById(id), HttpStatus.NOT_FOUND);
+        }
+
     }
 
     public ResponseEntity getUsers() throws JsonProcessingException {
@@ -112,5 +116,12 @@ public class UserService extends RuntimeException {
         //
 
 
+    }
+
+    private ErrorResponse userNotFoundById(int id) {
+        errorResponse.setTimestamp(LocalDateTime.now());
+        errorResponse.setError("Brak user o podanym id=" + id);
+        errorResponse.setStatus(HttpStatus.NOT_FOUND.value());
+        return errorResponse;
     }
 }

@@ -5,14 +5,16 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.ToString;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+import pl.sobolewski.serwis.tools.ErrorResponse;
 import pl.sobolewski.serwis.tools.PasswordGenerator;
 
-import java.util.List;
-import java.util.Optional;
+import java.time.LocalDateTime;
+import java.util.*;
 
 @Component
 @ToString
@@ -24,6 +26,8 @@ public class UserService extends RuntimeException {
     ObjectMapper objectMapper;
     @Autowired
     PasswordGenerator passwordGenerator;
+    @Autowired
+    ErrorResponse errorResponse;
 
     public ResponseEntity getUsername(int id) {
         Optional<User> user = userRepository.findById((long) id);
@@ -35,7 +39,10 @@ public class UserService extends RuntimeException {
 
             return ResponseEntity.ok(username);
         } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+                errorResponse.setTimestamp(LocalDateTime.now());
+                errorResponse.setError("Brak user o podanym id");
+                errorResponse.setStatus(HttpStatus.NOT_FOUND.value());
+            return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
         }
 
     }

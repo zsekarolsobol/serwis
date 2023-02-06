@@ -5,10 +5,11 @@ import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 @RequestMapping("/users")
 @RestController
-public class UserController {
+public class UserController extends ResponseEntityExceptionHandler {
 
     @Autowired
     UserService userService;

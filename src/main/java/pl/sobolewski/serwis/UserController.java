@@ -13,6 +13,11 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    @GetMapping("/details/{id}")
+    public ResponseEntity getUsername(@PathVariable("id") int id) {
+        return userService.getUsername(id);
+    }
+
     @GetMapping("")
     public ResponseEntity getUsers() throws JsonProcessingException {
         return userService.getUsers();

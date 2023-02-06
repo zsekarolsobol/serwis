@@ -12,7 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 import pl.sobolewski.serwis.tools.PasswordGenerator;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Component
@@ -26,6 +25,20 @@ public class UserService extends RuntimeException {
     @Autowired
     PasswordGenerator passwordGenerator;
 
+    public ResponseEntity getUsername(int id) {
+        Optional<User> user = userRepository.findById((long) id);
+        if (!user.isEmpty()) {
+            String username = user.stream()
+                    .map(User::getUsername)
+                    .findAny().get();
+            System.out.println(username);
+
+            return ResponseEntity.ok(username);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+
+    }
 
     public ResponseEntity getUsers() throws JsonProcessingException {
         List<User> allUsers = userRepository.findAll();

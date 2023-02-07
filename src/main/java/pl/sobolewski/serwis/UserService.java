@@ -46,7 +46,7 @@ public class UserService extends RuntimeException {
 
     public ResponseEntity getUserById(int id) throws JsonProcessingException {
         Optional<User> user = userRepository.findById((long) id);
-        if (!user.isEmpty()) {
+        if (user.isPresent()) {
             return ResponseEntity.ok(objectMapper.writeValueAsString(user));
         } else {
             return new ResponseEntity<>(userNotFoundById(id), HttpStatus.NOT_FOUND);
@@ -61,9 +61,9 @@ public class UserService extends RuntimeException {
 
 
     public ResponseEntity addUser(User user) {
-        List<User> userFromDb = userRepository.findByUsername(user.getUsername());
+        Optional<User> userFromDb = userRepository.findByUsername(user.getUsername());
 
-        if (!userFromDb.isEmpty()) {
+        if (userFromDb.isPresent()) {
             return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).build();//  User savedUser = userRepository.save(user);
         }
         String noHashingPassword = user.getPassword(); // pobranie jawnie hasla

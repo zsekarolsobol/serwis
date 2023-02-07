@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="28f42fcc-3d98-41f2-b6c8-b3338e875db3" name="Changes" comment="przebudowa metod getUserById i getUsernameById o userNotFoundById">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/UserService.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2L5bSE8jYNE4h9GcSAQ4WQLqaMX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/java/j-n-s-p-serwis-spolecznosciowy",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.ignored.files"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="pl.sobolewski.serwis.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pl.sobolewski.serwis.Main" />
+      <module name="j-n-s-p-serwis-spolecznosciowy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.pl.sobolewski.serwis.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Karol\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="28f42fcc-3d98-41f2-b6c8-b3338e875db3" name="Changes" comment="" />
+      <created>1675163892036</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1675163892036</updated>
+    </task>
+    <task id="LOCAL-00001" summary="start">
+      <created>1675164793462</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1675164793462</updated>
+    </task>
+    <task id="LOCAL-00002" summary="utworzenie modelu User">
+      <created>1675166403720</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675166403720</updated>
+    </task>
+    <task id="LOCAL-00003" summary="dodanie metody getMapping oraz PostMapping dla User">
+      <created>1675167859983</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1675167859983</updated>
+    </task>
+    <task id="LOCAL-00004" summary="dodanie zabezpieczenia przed dodaniem uzytkownika o takim samym loginie">
+      <created>1675169626909</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1675169626909</updated>
+    </task>
+    <task id="LOCAL-00005" summary="dodanie kodowanie hasla md5">
+      <created>1675172317429</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1675172317429</updated>
+    </task>
+    <task id="LOCAL-00006" summary="zmiana haszowania hasla. Zmiana na interfejs">
+      <created>1675238607550</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1675238607550</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Wstrzyknięcie zaleznosci do HashingPassword">
+      <created>1675239674310</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1675239674310</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Utworzenie UserController w celu enkapsulacji">
+      <created>1675412925078</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1675412925078</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Dodanie nowego endpointu - aktualizacja hasla uzytkownika">
+      <created>1675431986106</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1675431986106</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Obsluga sterowania changePassword">
+      <created>1675434084089</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1675434084089</updated>
+    </task>
+    <task id="LOCAL-00011" summary="dodanie endpointa pobierajacego username by ID">
+      <created>1675669376140</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1675669376140</updated>
+    </task>
+    <task id="LOCAL-00012" summary="dodanie endpointa pobierajacego username by ID">
+      <created>1675670121929</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1675670121929</updated>
+    </task>
+    <task id="LOCAL-00013" summary="dodanie ResponseEntity z wlasna wiadomoscia w formacie json">
+      <created>1675676929359</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1675676929359</updated>
+    </task>
+    <task id="LOCAL-00014" summary="dodanie ResponseEntity z wlasna wiadomoscia w formacie json z dodaniem id do wiadomosci">
+      <created>1675677265140</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1675677265140</updated>
+    </task>
+    <task id="LOCAL-00015" summary="dodanie wlasciwosci email do klasy User, nowy endpoint pobranie UseraById">
+      <created>1675678485619</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1675678485619</updated>
+    </task>
+    <task id="LOCAL-00016" summary="przebudowa metod getUserById i getUsernameById o userNotFoundById">
+      <created>1675679285196</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1675679285196</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="start" />
+    <MESSAGE value="utworzenie modelu User" />
+    <MESSAGE value="dodanie metody getMapping oraz PostMapping dla User" />
+    <MESSAGE value="dodanie zabezpieczenia przed dodaniem uzytkownika o takim samym loginie" />
+    <MESSAGE value="dodanie kodowanie hasla md5" />
+    <MESSAGE value="zmiana haszowania hasla. Zmiana na interfejs" />
+    <MESSAGE value="Wstrzyknięcie zaleznosci do HashingPassword" />
+    <MESSAGE value="Utworzenie UserController w celu enkapsulacji" />
+    <MESSAGE value="Dodanie nowego endpointu - aktualizacja hasla uzytkownika" />
+    <MESSAGE value="Obsluga sterowania changePassword" />
+    <MESSAGE value="dodanie endpointa pobierajacego username by ID" />
+    <MESSAGE value="dodanie ResponseEntity z wlasna wiadomoscia w formacie json" />
+    <MESSAGE value="dodanie ResponseEntity z wlasna wiadomoscia w formacie json z dodaniem id do wiadomosci" />
+    <MESSAGE value="dodanie wlasciwosci email do klasy User, nowy endpoint pobranie UseraById" />
+    <MESSAGE value="przebudowa metod getUserById i getUsernameById o userNotFoundById" />
+    <option name="LAST_COMMIT_MESSAGE" value="przebudowa metod getUserById i getUsernameById o userNotFoundById" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.NoSuchElementException" package="java.util" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

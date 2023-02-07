@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28f42fcc-3d98-41f2-b6c8-b3338e875db3" name="Changes" comment="dodanie adnotacji @CrossOrigin aby dzialal frontend">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675679285196</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="dodanie adnotacji @CrossOrigin aby dzialal frontend">
+      <created>1675771292184</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1675771292184</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -229,7 +237,8 @@
     <MESSAGE value="dodanie ResponseEntity z wlasna wiadomoscia w formacie json z dodaniem id do wiadomosci" />
     <MESSAGE value="dodanie wlasciwosci email do klasy User, nowy endpoint pobranie UseraById" />
     <MESSAGE value="przebudowa metod getUserById i getUsernameById o userNotFoundById" />
-    <option name="LAST_COMMIT_MESSAGE" value="przebudowa metod getUserById i getUsernameById o userNotFoundById" />
+    <MESSAGE value="dodanie adnotacji @CrossOrigin aby dzialal frontend" />
+    <option name="LAST_COMMIT_MESSAGE" value="dodanie adnotacji @CrossOrigin aby dzialal frontend" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

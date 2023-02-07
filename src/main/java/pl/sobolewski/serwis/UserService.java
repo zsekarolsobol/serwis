@@ -60,7 +60,7 @@ public class UserService extends RuntimeException {
     }
 
 
-    public ResponseEntity addUser(User user) { // dodac kontrole przed pustym
+    public ResponseEntity addUser(User user) { // dodac kontrole przed pustym !!
         Optional<User> userFromDb = userRepository.findByUsername(user.getUsername());
 
         if (userFromDb.isPresent()) {

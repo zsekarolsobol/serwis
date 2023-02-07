@@ -2,14 +2,17 @@ package pl.sobolewski.serwis;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.RequiredArgsConstructor;
 import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 import pl.sobolewski.serwis.tools.ErrorResponse;
 import pl.sobolewski.serwis.tools.PasswordGenerator;
 
@@ -18,10 +21,12 @@ import java.util.*;
 
 @Component
 @ToString
-public class UserService extends RuntimeException {
+@Slf4j
+
+public class UserService extends ResponseEntityExceptionHandler {
 
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
     @Autowired
     ObjectMapper objectMapper;
     @Autowired
@@ -29,19 +34,14 @@ public class UserService extends RuntimeException {
     @Autowired
     ErrorResponse errorResponse;
 
-    public ResponseEntity getUsernameById(int id) {
-        Optional<User> user = userRepository.findById((long) id);
-        if (!user.isEmpty()) {
-            String username = user.stream()
-                    .map(User::getUsername)
-                    .findAny().get();
-            System.out.println(username);
-
-            return ResponseEntity.ok(username);
-        } else {
-            return new ResponseEntity<>(userNotFoundById(id), HttpStatus.NOT_FOUND);
+    public String getUsernameById(Integer id) {
+        System.out.println("Metoda UserService/getUsernameById -> id " + id);
+        if (id == null)  {
+            throw new IllegalArgumentException("Id nie może być nullem");
         }
-
+        return userRepository.findById((long) id)
+                .map(User::getUsername)
+                .orElse(null);
     }
 
     public ResponseEntity getUserById(int id) throws JsonProcessingException {
@@ -118,10 +118,19 @@ public class UserService extends RuntimeException {
 
     }
 
-    private ErrorResponse userNotFoundById(int id) {
-        errorResponse.setTimestamp(LocalDateTime.now());
-        errorResponse.setError("Brak user o podanym id=" + id);
-        errorResponse.setStatus(HttpStatus.NOT_FOUND.value());
-        return errorResponse;
+    public ErrorResponse userNotFoundById(Integer id) {
+        return ErrorResponse.builder()
+                .timestamp(LocalDateTime.now())
+                .error("Brak user o podanym id=" + id)
+                .status(HttpStatus.NOT_FOUND.value())
+                .build();
     }
+
+    @ExceptionHandler({IllegalArgumentException.class})
+    public ResponseEntity<String> handleException(IllegalArgumentException exception){
+        log.error("Blad poczas pobierania usera: {}" , exception.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(exception.getMessage());
+    }
+
 }

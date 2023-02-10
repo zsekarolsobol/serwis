@@ -35,7 +35,6 @@ public class UserService extends ResponseEntityExceptionHandler {
     ErrorResponse errorResponse;
 
     public String getUsernameById(Integer id) {
-        System.out.println("Metoda UserService/getUsernameById -> id " + id);
         if (id == null)  {
             throw new IllegalArgumentException("Id nie może być nullem");
         }
@@ -44,13 +43,20 @@ public class UserService extends ResponseEntityExceptionHandler {
                 .orElse(null);
     }
 
-    public ResponseEntity getUserById(int id) throws JsonProcessingException {
+    public Optional<User> getUserById(int id) throws JsonProcessingException {
         Optional<User> user = userRepository.findById((long) id);
+        if(user.isEmpty()){
+            throw new IllegalArgumentException("nie znaleziono usera");
+        }
+        return user;
+        /*
         if (user.isPresent()) {
             return ResponseEntity.ok(objectMapper.writeValueAsString(user));
         } else {
             return new ResponseEntity<>(userNotFoundById(id), HttpStatus.NOT_FOUND);
         }
+
+         */
 
     }
 

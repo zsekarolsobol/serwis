@@ -10,6 +10,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import java.util.Optional;
+
 @RequestMapping("/users")
 @RestController
 @RequiredArgsConstructor
@@ -21,21 +23,24 @@ public class UserController extends ResponseEntityExceptionHandler {
 
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/details/{id}")
-    public ResponseEntity<String> getUsername(@PathVariable("id") Integer id) {
+    public ResponseEntity getUsername(@PathVariable("id") Integer id) {
         String username = userService.getUsernameById(id);
-        System.out.println("Metoda UserController/getUsername -> username " + username);
+
         if (username == null) {
-            System.out.println("Not found");
-            new ResponseEntity<>(userService.userNotFoundById(id), HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(userService.userNotFoundById(id), HttpStatus.NOT_FOUND);
         }
-        System.out.println("Status 200");
         return ResponseEntity.ok(username);
     }
 
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/{id}")
     public ResponseEntity getUsers(@PathVariable("id") int id) throws JsonProcessingException {
-        return userService.getUserById(id);
+        Optional<User> userById = userService.getUserById(id);
+
+        if (!userById.isPresent()) {
+            return new ResponseEntity<>(userService.userNotFoundById(id), HttpStatus.NOT_FOUND);
+        }
+        return ResponseEntity.ok(userById);
     }
 
     @CrossOrigin(origins = "http://localhost:3000")

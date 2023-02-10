@@ -2,10 +2,8 @@ package pl.sobolewski.serwis;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
-import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,14 +15,14 @@ import pl.sobolewski.serwis.tools.ErrorResponse;
 import pl.sobolewski.serwis.tools.PasswordGenerator;
 
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
 
 @Component
-@ToString
-@Slf4j
 
 public class UserService extends ResponseEntityExceptionHandler {
 
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(UserService.class);
     @Autowired
     private UserRepository userRepository;
     @Autowired
@@ -35,7 +33,7 @@ public class UserService extends ResponseEntityExceptionHandler {
     ErrorResponse errorResponse;
 
     public String getUsernameById(Integer id) {
-        if (id == null)  {
+        if (id == null) {
             throw new IllegalArgumentException("Id nie może być nullem");
         }
         return userRepository.findById((long) id)
@@ -45,7 +43,7 @@ public class UserService extends ResponseEntityExceptionHandler {
 
     public Optional<User> getUserById(int id) throws JsonProcessingException {
         Optional<User> user = userRepository.findById((long) id);
-        if(user.isEmpty()){
+        if (user.isEmpty()) {
             throw new IllegalArgumentException("nie znaleziono usera");
         }
         return user;
@@ -62,7 +60,8 @@ public class UserService extends ResponseEntityExceptionHandler {
 
     public ResponseEntity getUsers() throws JsonProcessingException {
         List<User> allUsers = userRepository.findAll();
-        return ResponseEntity.ok(objectMapper.writeValueAsString(allUsers));
+        return ResponseEntity.ok(allUsers);
+       // return ResponseEntity.ok(objectMapper.writeValueAsString(allUsers));
     }
 
 
@@ -125,18 +124,25 @@ public class UserService extends ResponseEntityExceptionHandler {
     }
 
     public ErrorResponse userNotFoundById(Integer id) {
-        return ErrorResponse.builder()
-                .timestamp(LocalDateTime.now())
-                .error("Brak user o podanym id=" + id)
-                .status(HttpStatus.NOT_FOUND.value())
-                .build();
+        if (id != null) {
+            return ErrorResponse.builder()
+                    .timestamp(LocalDateTime.now())
+                    .error("Brak user o podanym id=" + id)
+                    .status(HttpStatus.NOT_FOUND.value())
+                    .build();
+        } else {
+            return null;
+        }
     }
 
     @ExceptionHandler({IllegalArgumentException.class})
-    public ResponseEntity<String> handleException(IllegalArgumentException exception){
-        log.error("Blad poczas pobierania usera: {}" , exception.getMessage());
+    public ResponseEntity<String> handleException(IllegalArgumentException exception) {
+        log.error("Blad poczas pobierania usera: {}", exception.getMessage());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                 .body(exception.getMessage());
     }
 
+    public String toString() {
+        return "UserService(userRepository=" + this.userRepository + ", objectMapper=" + this.objectMapper + ", passwordGenerator=" + this.passwordGenerator + ", errorResponse=" + this.errorResponse + ")";
+    }
 }

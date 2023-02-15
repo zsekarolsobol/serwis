@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import java.util.List;
 import java.util.Optional;
 
 @RequestMapping("/users")
@@ -46,7 +47,13 @@ public class UserController extends ResponseEntityExceptionHandler {
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("")
     public ResponseEntity getUsers() throws JsonProcessingException {
-        return userService.getUsers();
+        List<User> userList = userService.getUsers();
+        if (userList.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else {
+            return ResponseEntity.ok(userList);
+        }
+
     }
 
     @CrossOrigin(origins = "http://localhost:3000")

@@ -7,7 +7,7 @@ import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
@@ -18,7 +18,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
-@Component
+
+@Service
 
 public class UserService extends ResponseEntityExceptionHandler {
 
@@ -58,10 +59,11 @@ public class UserService extends ResponseEntityExceptionHandler {
 
     }
 
-    public ResponseEntity getUsers() throws JsonProcessingException {
+    public List<User> getUsers() throws JsonProcessingException {
         List<User> allUsers = userRepository.findAll();
-        return ResponseEntity.ok(allUsers);
-       // return ResponseEntity.ok(objectMapper.writeValueAsString(allUsers));
+        return allUsers;
+        //    return ResponseEntity.ok(allUsers);
+        // return ResponseEntity.ok(objectMapper.writeValueAsString(allUsers));
     }
 
 

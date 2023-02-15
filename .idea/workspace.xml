@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28f42fcc-3d98-41f2-b6c8-b3338e875db3" name="Changes" comment="Zmiana getUsers typu zwracanego, obsluga statusów w controlerze">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/sobolewski/serwis/tools/UserServiceTest.java" afterDir="false" />
+    <list default="true" id="28f42fcc-3d98-41f2-b6c8-b3338e875db3" name="Changes" comment="@Test dla UserService.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/sobolewski/serwis/tools/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/sobolewski/serwis/tools/UserServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +65,7 @@
     "settings.editor.selected.configurable": "testing.instrumented.configuration"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.UserServiceTest.shouldUserListIsEmpty">
+  <component name="RunManager" selected="JUnit.UserServiceTest.shouldGetAllUsers">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pl.sobolewski.serwis.Main" />
       <module name="j-n-s-p-serwis-spolecznosciowy" />
@@ -102,7 +103,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTest.shouldThrowExceptionWhenIdIsNullGetUsernameById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceTest.shouldReturnUsernameWhenIdIsNotNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="j-n-s-p-serwis-spolecznosciowy" />
       <extension name="coverage">
         <pattern>
@@ -112,7 +113,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="pl.sobolewski.serwis.tools" />
       <option name="MAIN_CLASS_NAME" value="pl.sobolewski.serwis.tools.UserServiceTest" />
-      <option name="METHOD_NAME" value="shouldThrowExceptionWhenIdIsNullGetUsernameById" />
+      <option name="METHOD_NAME" value="shouldReturnUsernameWhenIdIsNotNull" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -136,11 +137,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserServiceTest.shouldUserListIsEmpty" />
         <item itemvalue="JUnit.UserServiceTest.shouldGetAllUsers" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.UserServiceTest.shouldReturnUsernameWhenIdIsNotNull" />
         <item itemvalue="JUnit.All in j-n-s-p-serwis-spolecznosciowy" />
-        <item itemvalue="JUnit.UserServiceTest.shouldThrowExceptionWhenIdIsNullGetUsernameById" />
+        <item itemvalue="JUnit.UserServiceTest.shouldUserListIsEmpty" />
       </list>
     </recent_temporary>
   </component>
@@ -310,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676022844293</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="@Test dla UserService.java">
+      <created>1676030564378</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1676030564378</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -344,7 +352,8 @@
     <MESSAGE value="komentarz" />
     <MESSAGE value="zmiany Tomka" />
     <MESSAGE value="Zmiana getUsers typu zwracanego, obsluga statusów w controlerze" />
-    <option name="LAST_COMMIT_MESSAGE" value="Zmiana getUsers typu zwracanego, obsluga statusów w controlerze" />
+    <MESSAGE value="@Test dla UserService.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="@Test dla UserService.java" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/j_n_s_p_serwis_spolecznosciowy$pl_sobolewski_serwis_Main.ic" NAME="pl.sobolewski.serwis.Main Coverage Results" MODIFIED="1675775188824" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

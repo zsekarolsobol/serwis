@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28f42fcc-3d98-41f2-b6c8-b3338e875db3" name="Changes" comment="@Test dla UserService.java">
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/sobolewski/serwis/UserControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pl/sobolewski/serwis/tools/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/sobolewski/serwis/tools/UserServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +24,7 @@
         <option value="Interface" />
         <option value="package-info" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -57,7 +61,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/java/j-n-s-p-serwis-spolecznosciowy",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/java/j-n-s-p-serwis-spolecznosciowy/src/test",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -65,7 +71,18 @@
     "settings.editor.selected.configurable": "testing.instrumented.configuration"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.UserServiceTest.shouldGetAllUsers">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\java\j-n-s-p-serwis-spolecznosciowy\src\test" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="pl.sobolewski.serwis" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.UserControllerTest.shouldGetUsernameMoreAssertion">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pl.sobolewski.serwis.Main" />
       <module name="j-n-s-p-serwis-spolecznosciowy" />
@@ -79,31 +96,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in j-n-s-p-serwis-spolecznosciowy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="j-n-s-p-serwis-spolecznosciowy" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.sobolewski.serwis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.sobolewski.serwis" />
+      <option name="MAIN_CLASS_NAME" value="pl.sobolewski.serwis.UserControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTest.shouldGetAllUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserControllerTest.shouldGetUsernameMoreAssertion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="j-n-s-p-serwis-spolecznosciowy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pl.sobolewski.serwis.tools.*" />
+          <option name="PATTERN" value="pl.sobolewski.serwis.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="pl.sobolewski.serwis.tools" />
-      <option name="MAIN_CLASS_NAME" value="pl.sobolewski.serwis.tools.UserServiceTest" />
-      <option name="METHOD_NAME" value="shouldGetAllUsers" />
+      <option name="PACKAGE_NAME" value="pl.sobolewski.serwis" />
+      <option name="MAIN_CLASS_NAME" value="pl.sobolewski.serwis.UserControllerTest" />
+      <option name="METHOD_NAME" value="shouldGetUsernameMoreAssertion" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTest.shouldReturnUsernameWhenIdIsNotNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="j-n-s-p-serwis-spolecznosciowy" />
       <extension name="coverage">
         <pattern>
@@ -113,13 +137,12 @@
       </extension>
       <option name="PACKAGE_NAME" value="pl.sobolewski.serwis.tools" />
       <option name="MAIN_CLASS_NAME" value="pl.sobolewski.serwis.tools.UserServiceTest" />
-      <option name="METHOD_NAME" value="shouldReturnUsernameWhenIdIsNotNull" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTest.shouldUserListIsEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceTest.shouldGetUserById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="j-n-s-p-serwis-spolecznosciowy" />
       <extension name="coverage">
         <pattern>
@@ -129,7 +152,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="pl.sobolewski.serwis.tools" />
       <option name="MAIN_CLASS_NAME" value="pl.sobolewski.serwis.tools.UserServiceTest" />
-      <option name="METHOD_NAME" value="shouldUserListIsEmpty" />
+      <option name="METHOD_NAME" value="shouldGetUserById" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -137,11 +160,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserServiceTest.shouldGetAllUsers" />
+        <item itemvalue="JUnit.UserControllerTest.shouldGetUsernameMoreAssertion" />
+        <item itemvalue="JUnit.UserControllerTest" />
+        <item itemvalue="JUnit.UserServiceTest.shouldGetUserById" />
+        <item itemvalue="JUnit.UserServiceTest" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.UserServiceTest.shouldReturnUsernameWhenIdIsNotNull" />
-        <item itemvalue="JUnit.All in j-n-s-p-serwis-spolecznosciowy" />
-        <item itemvalue="JUnit.UserServiceTest.shouldUserListIsEmpty" />
       </list>
     </recent_temporary>
   </component>
@@ -318,7 +341,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676030564378</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="@Test dla UserService.java">
+      <created>1676457039987</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1676457039987</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

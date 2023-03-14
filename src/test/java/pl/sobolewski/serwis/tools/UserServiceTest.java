@@ -8,6 +8,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.stubbing.OngoingStubbing;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -18,21 +20,39 @@ import pl.sobolewski.serwis.UserService;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
 
-@ExtendWith(MockitoExtension.class)
+//@ExtendWith(MockitoExtension.class)
+@SpringBootTest
 class UserServiceTest {
 
 
-    @InjectMocks
-    UserService userService;
+  //  @InjectMocks
+    @Autowired
+    private UserService userService;
 
     @Mock
-    UserRepository userRepository;
+    private UserRepository userRepository;
+
+
+
+    @Test
+    void shouldGetUserById() throws JsonProcessingException {
+        //give
+        //when
+        Optional<User> user = userService.getUserById(1);
+        Stream<Integer> userId = user.stream().map(User::getId);     // tak dla siebie
+        //then
+        assertThat(user).isNotNull();
+        assertThat(user.get().getId()).isEqualTo(1);
+        assertThat(userId).isNotNull();
+
+    }
 
     @Test
     void shouldUserNotFoundByIdNotNull() {
@@ -61,13 +81,13 @@ class UserServiceTest {
     @Test
     void shouldReturnUsernameWhenIdIsNotNull() {
         //given
-        when(userRepository.findById(1L)).thenReturn(Optional.of(new User("Karol", "haslo")));
+        when(userRepository.findById(1L)).thenReturn(Optional.of(new User("Sta5", "haslo")));
 
         //when
         String username = userService.getUsernameById(1);
 
         //then
-        assertEquals("Karol", username);
+        assertEquals("Sta5", username);
     }
 
     @Test

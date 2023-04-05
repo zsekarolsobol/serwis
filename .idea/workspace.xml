@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28f42fcc-3d98-41f2-b6c8-b3338e875db3" name="Changes" comment="@Test dla UserService.java">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/sobolewski/serwis/UserControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/application.properties" afterDir="false" />
+    <list default="true" id="28f42fcc-3d98-41f2-b6c8-b3338e875db3" name="Changes" comment="@Test Integracyjne dla UserControllerTest.java , dodanie propertiesow dla testow">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/dto/UserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/dto/UserEmailDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/mapper/UserDtoMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pl/sobolewski/serwis/tools/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/sobolewski/serwis/tools/UserServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/sobolewski/serwis/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +24,9 @@
       <list>
         <option value="Interface" />
         <option value="package-info" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Record" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -68,7 +70,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "testing.instrumented.configuration"
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -82,16 +84,24 @@
       <recent name="pl.sobolewski.serwis" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserControllerTest.shouldGetUsernameMoreAssertion">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.pl.sobolewski.serwis.Main">
+    <configuration name="pl.sobolewski.serwis.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pl.sobolewski.serwis.Main" />
       <module name="j-n-s-p-serwis-spolecznosciowy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pl.sobolewski.serwis.*" />
+          <option name="PATTERN" value="pl.sobolewski.serwis.dto.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in j-n-s-p-serwis-spolecznosciowy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="j-n-s-p-serwis-spolecznosciowy" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -100,7 +110,7 @@
       <module name="j-n-s-p-serwis-spolecznosciowy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pl.sobolewski.serwis.*" />
+          <option name="PATTERN" value="pl.sobolewski.serwis.dto.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -115,7 +125,7 @@
       <module name="j-n-s-p-serwis-spolecznosciowy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pl.sobolewski.serwis.*" />
+          <option name="PATTERN" value="pl.sobolewski.serwis.dto.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -123,21 +133,6 @@
       <option name="MAIN_CLASS_NAME" value="pl.sobolewski.serwis.UserControllerTest" />
       <option name="METHOD_NAME" value="shouldGetUsernameMoreAssertion" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="j-n-s-p-serwis-spolecznosciowy" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.sobolewski.serwis.tools.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pl.sobolewski.serwis.tools" />
-      <option name="MAIN_CLASS_NAME" value="pl.sobolewski.serwis.tools.UserServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -160,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.pl.sobolewski.serwis.Main" />
+        <item itemvalue="JUnit.All in j-n-s-p-serwis-spolecznosciowy" />
         <item itemvalue="JUnit.UserControllerTest.shouldGetUsernameMoreAssertion" />
         <item itemvalue="JUnit.UserControllerTest" />
         <item itemvalue="JUnit.UserServiceTest.shouldGetUserById" />
-        <item itemvalue="JUnit.UserServiceTest" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -348,7 +343,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676457039987</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="@Test Integracyjne dla UserControllerTest.java , dodanie propertiesow dla testow">
+      <created>1678791611071</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1678791611071</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -383,7 +385,8 @@
     <MESSAGE value="zmiany Tomka" />
     <MESSAGE value="Zmiana getUsers typu zwracanego, obsluga statusów w controlerze" />
     <MESSAGE value="@Test dla UserService.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="@Test dla UserService.java" />
+    <MESSAGE value="@Test Integracyjne dla UserControllerTest.java , dodanie propertiesow dla testow" />
+    <option name="LAST_COMMIT_MESSAGE" value="@Test Integracyjne dla UserControllerTest.java , dodanie propertiesow dla testow" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/j_n_s_p_serwis_spolecznosciowy$pl_sobolewski_serwis_Main.ic" NAME="pl.sobolewski.serwis.Main Coverage Results" MODIFIED="1675775188824" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

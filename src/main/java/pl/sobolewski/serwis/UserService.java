@@ -11,12 +11,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+import pl.sobolewski.serwis.dto.UserEmailDto;
 import pl.sobolewski.serwis.tools.ErrorResponse;
 import pl.sobolewski.serwis.tools.PasswordGenerator;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -65,7 +67,6 @@ public class UserService extends ResponseEntityExceptionHandler {
         //    return ResponseEntity.ok(allUsers);
         // return ResponseEntity.ok(objectMapper.writeValueAsString(allUsers));
     }
-
 
     public ResponseEntity addUser(User user) { // dodac kontrole przed pustym !!
         Optional<User> userFromDb = userRepository.findByUsername(user.getUsername());

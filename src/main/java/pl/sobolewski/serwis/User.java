@@ -11,6 +11,7 @@ import org.hibernate.annotations.IdGeneratorType;
 @NoArgsConstructor
 @RequiredArgsConstructor
 @EqualsAndHashCode
+@Builder
 @ToString
 public class User {
     @Id
